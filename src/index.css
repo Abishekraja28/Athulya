@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply overflow-x-hidden;
+    font-family: 'Lora', serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-1000px);
+    }
+  }
+
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes scroll-down {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+
+  @keyframes gentle-spin {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.05);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes wave {
+    0%, 100% {
+      transform: translateY(0) scaleX(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(0) scaleX(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes sound-wave {
+    0%, 100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(1.5);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes confetti {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(1000px) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes glow-red {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(220, 38, 38, 0.6);
+    }
+  }
+
+  @keyframes flower-bloom {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) rotate(0deg);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.2) rotate(360deg);
+    }
+  }
+
+  @keyframes float-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(200px);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes section-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-float {
+    animation: float 15s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out forwards;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+
+  .animate-scroll-down {
+    animation: scroll-down 2s ease-in-out infinite;
+  }
+
+  .animate-gentle-spin {
+    animation: gentle-spin 20s linear infinite;
+  }
+
+  .animate-twinkle {
+    animation: twinkle 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  .animate-sound-wave {
+    animation: sound-wave 1s ease-in-out infinite;
+  }
+
+  .animate-confetti {
+    animation: confetti 5s ease-in forwards;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  .wave-line {
+    @apply absolute w-full h-px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(251, 113, 133, 0.5),
+      transparent
+    );
+    animation: wave 3s ease-in-out infinite;
+  }
+
+  .delay-150 {
+    animation-delay: 150ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .delay-1000 {
+    animation-delay: 1000ms;
+  }
+
+  .delay-1500 {
+    animation-delay: 1500ms;
+  }
+
+  .delay-2000 {
+    animation-delay: 2000ms;
+  }
+
+  .delay-2500 {
+    animation-delay: 2500ms;
+  }
+
+  .character-card:hover {
+    @apply scale-105;
+    box-shadow: 0 20px 60px rgba(220, 38, 38, 0.3);
+  }
+
+  .character-card:hover img {
+    @apply scale-110;
+  }
+
+  .animate-glow-red {
+    animation: glow-red 3s ease-in-out infinite;
+  }
+
+  .animate-flower-bloom {
+    animation: flower-bloom 4s ease-in-out infinite;
+  }
+
+  .animate-float-down {
+    animation: float-down 8s ease-in infinite;
+  }
+
+  .page-gradient {
+    background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(30, 7, 20, 0.95) 50%, rgba(17, 24, 39, 0.95) 100%);
+    background-size: 200% 200%;
+  }
+
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite, section-in 0.8s ease-out forwards;
+  }
+
+  section {
+    animation: section-in 0.8s ease-out forwards;
+  }
+
+  .elegant-border {
+    position: relative;
+  }
+
+  .elegant-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #dc2626, transparent);
+    border-radius: 2px;
+  }
+
+  .elegant-border::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #dc2626, transparent);
+    border-radius: 2px;
+  }
+}
